@@ -7,7 +7,7 @@ const simpleGitPromise = require('simple-git/promise')();
 // change current directory to repo directory in local
 shellJs.cd('C:/Users/ca_user1/Desktop/automatejs-master');
 // Repo name
-const repo = 'dummy';  //Repo name
+const repo = 'demo';  //Repo name
 // User name and password of your GitHub
 const userName = 'BagyaShivani';
 const password = 'shivani2904';
