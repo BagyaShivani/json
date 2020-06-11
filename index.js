@@ -16,6 +16,7 @@ const gitHubUrl = 'https://BagyaShivani:shivani2904@github.com/BagyaShivani/dumm
 // add local git config like username and email
 simpleGit.addConfig('user.email','bagya.shivani@wipro.com');
 simpleGit.addConfig('user.name','BagyaShivani');
+simpleGitPromise.removeRemote('origin',gitHubUrl);
 // Add remore repo url as origin to repo
 simpleGitPromise.addRemote('origin',gitHubUrl);
 // Add all files for commit
@@ -39,5 +40,5 @@ simpleGitPromise.addRemote('origin',gitHubUrl);
     .then((success) => {
        console.log('repo successfully pushed');
     },(failed)=> {
-       console.log('repo push failed');
+       console.log(failed);
  });
