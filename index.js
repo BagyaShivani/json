@@ -16,13 +16,11 @@ const password = 'shivani2904';
 const gitHubUrl = 'https://BagyaShivani:shivani2904@github.com/BagyaShivani/dummy';
 
 require('simple-git')()
-     .init()
-     .add('./*')
-     .commit("first commit!");
+     .init();
 // add local git config like username and email
 simpleGit.addConfig('user.email','bagya.shivani@wipro.com');
 simpleGit.addConfig('user.name','BagyaShivani');
-simpleGitPromise.removeRemote('origin',gitHubUrl);
+//simpleGitPromise.removeRemote('origin',gitHubUrl);
 // Add remore repo url as origin to repo
 simpleGitPromise.addRemote('origin',gitHubUrl);
 // Add all files for commit
