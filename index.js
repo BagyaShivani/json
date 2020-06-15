@@ -5,7 +5,7 @@ const shellJs = require('shelljs');
 const simpleGitPromise = require('simple-git/promise')();
 // change current directory to repo directory in local
 
-shellJs.cd('C:/Users/ca_user1/Desktop/automatejs-master');
+shellJs.cd('C:/Users/ca_user1/Desktop/automatejs-master/automatejs-master');
 let folder=process.argv[3];
 
 // Repo name
