@@ -7,16 +7,13 @@ const simpleGitPromise = require('simple-git/promise')();
 // change current directory to repo directory in local
 shellJs.cd('C:/Users/ca_user1/Desktop/automatejs-master');
 // Repo name
-const repo = 'demo';  //Repo name
+const repo = 'dummy';  //Repo name
 // User name and password of your GitHub
 const userName = 'BagyaShivani';
 const password = 'shivani2904';
 //Set up GitHub url like this so no manual entry of user pass needed
 
 const gitHubUrl = 'https://BagyaShivani:shivani2904@github.com/BagyaShivani/dummy';
-
-require('simple-git')()
-     .init();
 // add local git config like username and email
 simpleGit.addConfig('user.email','bagya.shivani@wipro.com');
 simpleGit.addConfig('user.name','BagyaShivani');
