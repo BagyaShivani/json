@@ -13,11 +13,11 @@ const userName = 'BagyaShivani';
 const password = 'shivani2904';
 //Set up GitHub url like this so no manual entry of user pass needed
 
-const gitHubUrl = 'https://${userName}:@{password}@github.com/${userName}/${repo}';
+const gitHubUrl = `https://${userName}:${password}@github.com/${userName}/${repo}`;
 // add local git config like username and email
 simpleGit.addConfig('user.email','bagya.shivani@wipro.com');
 simpleGit.addConfig('user.name','BagyaShivani');
-simpleGitPromise.removeRemote('origin',gitHubUrl);
+//simpleGitPromise.removeRemote('origin',gitHubUrl);
 // Add remore repo url as origin to repo
 simpleGitPromise.addRemote('origin',gitHubUrl);
 // Add all files for commit
