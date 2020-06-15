@@ -81,7 +81,7 @@ else if( process.argv[2] ==='update')
    });
 
    // Commit files as Initial Commit
-simpleGitPromise.commit(process.argv[3])
+simpleGitPromise.commit(process.argv[4])
  .then(
     (successCommit) => {
       console.log(successCommit);
