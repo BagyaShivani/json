@@ -11,8 +11,14 @@ const repo = 'demo';  //Repo name
 // User name and password of your GitHub
 const userName = 'BagyaShivani';
 const password = 'shivani2904';
-// Set up GitHub url like this so no manual entry of user pass needed
+//Set up GitHub url like this so no manual entry of user pass needed
+
 const gitHubUrl = 'https://BagyaShivani:shivani2904@github.com/BagyaShivani/dummy';
+
+require('simple-git')()
+     .init()
+     .add('./*')
+     .commit("first commit!");
 // add local git config like username and email
 simpleGit.addConfig('user.email','bagya.shivani@wipro.com');
 simpleGit.addConfig('user.name','BagyaShivani');
@@ -40,5 +46,5 @@ simpleGitPromise.addRemote('origin',gitHubUrl);
     .then((success) => {
        console.log('repo successfully pushed');
     },(failed)=> {
-       console.log(failed);
+       console.log("repo push failed");
  });
