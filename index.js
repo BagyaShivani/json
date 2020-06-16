@@ -21,7 +21,7 @@ simpleGit.addConfig('user.email','bagya.shivani@wipro.com');
 simpleGit.addConfig('user.name','BagyaShivani');
 const {Octokit}  = require("@octokit/rest");
 const octo = new Octokit({
-   auth: "537fed6eed759d5b078830ddef9b2d92f1e2f78a"
+   auth: "371b94c0951d13c1b06b89d9af0716409a4dddfc"
  });
 if(process.argv[2]==='create')
 {
