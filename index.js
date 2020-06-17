@@ -18,7 +18,7 @@ app.listen(port,()=> {
 app.put('/', (req,res)=>{
  
    
-   shellJs.cd('C:/Users/ca_user1/Desktop/automatejs-master/automatejs-master');
+   shellJs.cd('C:/Users/ca_user1/Desktop/automatejs-master/');
 //let folder=process.argv[3];
 let folder= req.param('repo_name');
 // Repo name
