@@ -117,7 +117,7 @@ simpleGitPromise.commit(req.param('update_msg'))
 simpleGitPromise.push('origin','master')
   .then((success) => {
      console.log(success);
-     res.send(success)
+     res.send("successfully updated repo")
   },(failed)=> {
      console.log('repo update failed');
      res.send("update failed")
