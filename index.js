@@ -97,10 +97,10 @@ else if( req.param('option')==='update')
    .then(
       (addSuccess) => {
          console.log(addSuccess);
-         res.send(addSuccess)
+       //  res.send(addSuccess)
       }, (failedAdd) => {
          console.log('adding files failed');
-         res.send("addingfiles failed")
+      //   res.send("addingfiles failed")
    });
 
    // Commit files as Initial Commit
@@ -108,10 +108,10 @@ simpleGitPromise.commit(req.param('update_msg'))
  .then(
     (successCommit) => {
       console.log(successCommit);
-      res.send(successCommit)
+    //  res.send(successCommit)
    }, (failed) => {
       console.log('failed commmit');
-      res.send("failed commit")
+    //  res.send("failed commit")
 });
 // Finally push to online repository
 simpleGitPromise.push('origin','master')
