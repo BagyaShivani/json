@@ -15,7 +15,7 @@ app.listen(port,()=> {
    console.log('listen port 8000');
    })
 
-app.put('/', (req,res)=>{
+app.post('/', (req,res)=>{
  
    
    shellJs.cd('C:/Users/ca_user1/Desktop/automatejs-master/');
