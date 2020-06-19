@@ -28,7 +28,7 @@ app.post('/', (req,res)=>{
    var update_msg=req.body.update_msg;
  
    
-   shellJs.cd('C:/Users/ca_user1/Desktop/automatejs-master/');
+   shellJs.cd('C:/Users/ca_user1/Desktop/automatejs-master/automatejs-master/');
 //let folder=process.argv[3];
 var folder= req.body.repoName;
 // Repo name
