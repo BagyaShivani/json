@@ -8,35 +8,45 @@ const simpleGitPromise = require('simple-git/promise')();
 
 
 const express = require('express');
+const bodyParser = require('body-parser');
+const router = express.Router();
 const app = express();
 const port = 8000;
+//app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.listen(port,()=> {
    console.log('listen port 8000');
    })
 
 app.post('/', (req,res)=>{
+   var option=req.body.option;
+  // var userName=req.body.userName;
+   //var pswrd=req.body.password;
+//   var repo_name=req.body.repoName;
+   var update_msg=req.body.update_msg;
  
    
    shellJs.cd('C:/Users/ca_user1/Desktop/automatejs-master/');
 //let folder=process.argv[3];
-let folder= req.param('repo_name');
+var folder= req.body.repoName;
 // Repo name
 //const repo = 'dum';  //Repo name
 // User name and password of your GitHub
-const userName = req.param('userName');
-const password = req.param('password')
+const userName = req.body.userName;
+const password = req.body.password;
 //Set up GitHub url like this so no manual entry of user pass needed
 
 const gitHubUrl = `https://${userName}:${password}@github.com/${userName}/${folder}`;
 // add local git config like username and email
-simpleGit.addConfig('user.email',req.param('email_id'));
+simpleGit.addConfig('user.email',req.body.mailId);
 simpleGit.addConfig('user.name',userName);
 const {Octokit}  = require("@octokit/rest");
 const octo = new Octokit({
-   auth: req.param('token')
+   auth: req.body.token
 });
-if(req.param('option')==='create')
+if(option==='create')
 {
    
    octo.repos.createForAuthenticatedUser({
@@ -54,7 +64,9 @@ if(req.param('option')==='create')
    
 }
 
-else if( req.param('option')==='push')
+
+
+else if( option==='push')
 {
    simpleGitPromise.removeRemote('origin',gitHubUrl);
 
@@ -91,7 +103,7 @@ simpleGitPromise.addRemote('origin',gitHubUrl);
  });
 
 }
-else if( req.param('option')==='update')
+else if( option==='update')
 {
    simpleGitPromise.add('.')
    .then(
@@ -104,7 +116,7 @@ else if( req.param('option')==='update')
    });
 
    // Commit files as Initial Commit
-simpleGitPromise.commit(req.param('update_msg'))
+simpleGitPromise.commit(update_msg)
  .then(
     (successCommit) => {
       console.log(successCommit);
