@@ -68,6 +68,14 @@ if(option==='create')
 
 else if( option==='push')
 {
+   octo.repos.createForAuthenticatedUser({
+
+      name: folder
+   }).then(data => {
+      console.log("successfully created repo " + folder)
+      //res.send("successfully created repo")
+   }).catch(e => {
+     console.log("repo already exists");
    simpleGitPromise.removeRemote('origin',gitHubUrl);
 
 // Add remore repo url as origin to repo
@@ -101,6 +109,7 @@ simpleGitPromise.addRemote('origin',gitHubUrl);
        console.log('repo push failed');
        res.send("repo push failed")
  });
+});
 
 }
 else if( option==='update')
